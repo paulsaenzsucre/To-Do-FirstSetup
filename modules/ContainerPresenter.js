@@ -4,6 +4,8 @@ import TaskRepository from './TaskRepository.js';
 import TaskListHeaderPresenter from './TaskListHeaderPresenter.js';
 
 class ContainerPresenter {
+  #parent;
+  
   constructor(parent, taskRepository = null) {
     this.#parent = parent;
     this.#taskRepository = taskRepository === null

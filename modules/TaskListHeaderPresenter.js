@@ -1,6 +1,8 @@
 import iconArrowsCcw from '../src/icon-arrows-ccw.svg';
 
 class TaskListHeaderPresenter {
+  #view;
+  
   constructor() {
     this.#view = document.createElement('div');
     this.#view.setAttribute('class', 'list-header');

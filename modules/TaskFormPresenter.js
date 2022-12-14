@@ -1,4 +1,6 @@
 class TaskFormPresenter {
+  #view;
+  
   constructor() {
     this.#view = document.createElement('form');
     this.#input = document.createElement('input');
