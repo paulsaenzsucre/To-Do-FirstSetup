@@ -16,7 +16,7 @@ class TaskFormPresenter {
     submit.setAttribute('type', 'submit');
     submit.setAttribute('value', '');
     submit.setAttribute('title', 'click this or press enter to submit');
-    this.#view.appendChild(this.#submit);
+    this.#view.appendChild(submit);
     this.#view.addEventListener('submit', this.#submitTask);
   }
 

@@ -14,7 +14,7 @@ class TaskListHeaderPresenter {
     this.#view.appendChild(title);
     const listStats = document.createElement('div');
     listStats.setAttribute('class', 'list-stats');
-    this.#view.appendChild(this.#listStats);
+    this.#view.appendChild(listStats);
     this.#completedCount = document.createElement('span');
     this.#completedCount.setAttribute('class', 'changes-count');
     listStats.appendChild(this.#completedCount);
