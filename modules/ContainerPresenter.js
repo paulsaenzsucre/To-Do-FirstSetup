@@ -15,7 +15,7 @@ class ContainerPresenter {
   #taskList;
 
   #view;
-  
+
   constructor(parent, taskRepository = null) {
     this.#parent = parent;
     this.#taskRepository = taskRepository === null

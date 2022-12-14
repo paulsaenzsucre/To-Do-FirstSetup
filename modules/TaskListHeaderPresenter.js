@@ -4,7 +4,7 @@ class TaskListHeaderPresenter {
   #completedCount;
 
   #view;
-  
+
   constructor() {
     this.#view = document.createElement('div');
     this.#view.setAttribute('class', 'list-header');

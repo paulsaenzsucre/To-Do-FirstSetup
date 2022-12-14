@@ -16,7 +16,7 @@ class TaskPresenter {
   #moreIcon;
 
   #changeState;
-  
+
   constructor(task) {
     this.#changeState = new CustomEvent('changeState', {
       detail: {},
