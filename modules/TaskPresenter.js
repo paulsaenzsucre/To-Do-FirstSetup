@@ -3,6 +3,18 @@ import iconCheck from '../src/icon-check.svg';
 import iconTrash from '../src/icon-trash.svg';
 
 class TaskPresenter {
+  #task;
+
+  #view;
+
+  #checkIcon;
+
+  #label;
+
+  #input;
+
+  #moreIcon;
+
   #changeState;
   
   constructor(task) {

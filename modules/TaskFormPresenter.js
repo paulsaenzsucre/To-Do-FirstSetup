@@ -1,4 +1,6 @@
 class TaskFormPresenter {
+  #input;
+  
   #view;
   
   constructor() {

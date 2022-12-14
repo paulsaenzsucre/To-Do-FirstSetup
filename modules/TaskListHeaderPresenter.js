@@ -1,6 +1,8 @@
 import iconArrowsCcw from '../src/icon-arrows-ccw.svg';
 
 class TaskListHeaderPresenter {
+  #completedCount;
+
   #view;
   
   constructor() {

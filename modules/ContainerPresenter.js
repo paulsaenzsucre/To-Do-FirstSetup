@@ -4,7 +4,17 @@ import TaskRepository from './TaskRepository.js';
 import TaskListHeaderPresenter from './TaskListHeaderPresenter.js';
 
 class ContainerPresenter {
+  #taskRepository;
+
   #parent;
+
+  #header;
+
+  #form;
+
+  #taskList;
+
+  #view;
   
   constructor(parent, taskRepository = null) {
     this.#parent = parent;
