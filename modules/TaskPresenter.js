@@ -3,20 +3,6 @@ import iconCheck from '../src/icon-check.svg';
 import iconTrash from '../src/icon-trash.svg';
 
 class TaskPresenter {
-  #task;
-
-  #view;
-
-  #checkIcon;
-
-  #label;
-
-  #input;
-
-  #moreIcon;
-
-  #changeState;
-
   constructor(task) {
     this.#changeState = new CustomEvent('changeState', {
       detail: {},
@@ -94,16 +80,10 @@ class TaskPresenter {
     this.#label.classList.add('hidden');
     this.#input.setAttribute('value', this.#task.description);
     this.#input.focus();
-    this.#input.addEventListener('blur', () => {
-      this.#task.description = this.#input.value;
-      this.#view.dispatchEvent(this.#changeState);
-      this.showState();
-    });
+    this.#input.addEventListener('blur', () => this.#updateDescription());
     this.#input.addEventListener('keypress', (evt) => {
       if (evt.key === 'Enter') {
-        this.#task.description = this.#input.value;
-        this.#view.dispatchEvent(this.#changeState);
-        this.showState();
+        this.#updateDescription();
       }
     });
     this.#moreIcon.setAttribute('class', 'icon-trash');
@@ -116,6 +96,12 @@ class TaskPresenter {
     this.#checkIcon.classList.toggle('task-completed');
     this.#label.classList.toggle('completed');
     this.#view.dispatchEvent(this.#changeState);
+  }
+
+  #updateDescription = () => {
+    this.#task.description = this.#input.value;
+    this.#view.dispatchEvent(this.#changeState);
+    this.showState();
   }
 }
 

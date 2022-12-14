@@ -31,9 +31,7 @@ class TaskRepository {
 
   removeTask = (task) => {
     const newArray = this.#tasks.filter((element) => task !== element);
-    this.#tasks = newArray;
-    this.#orderIndexs();
-    this.#storage.save(this.#tasks);
+    this.#updateTask(newArray);
   }
 
   allTasks = () => this.#tasks;
@@ -42,9 +40,7 @@ class TaskRepository {
 
   removeAllCompleted = () => {
     const newArray = this.#tasks.filter((element) => element.completed !== true);
-    this.#tasks = newArray;
-    this.#orderIndexs();
-    this.#storage.save(this.#tasks);
+    this.#updateTask(newArray);
   }
 
   #orderIndexs = () => {
@@ -55,6 +51,12 @@ class TaskRepository {
   }
 
   #newIndex = () => this.#tasks.length;
+
+  #updateTask = (newArray) => {
+    this.#tasks = newArray;
+    this.#orderIndexs();
+    this.#storage.save(this.#tasks);
+  }
 }
 
 export default TaskRepository;
